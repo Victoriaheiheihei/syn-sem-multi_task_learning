@@ -16,14 +16,7 @@ AMR是基于图的语义表示，可以统一表示具有相同含义的多个�
 
 因为AMR解析语料和成分句法语料无法公开，因此此处并未上传，但用于预训练的机器翻译WMT14英德语料可以在链接中进行下载[WMT14](http://www.statmt.org/wmt14/translation-task.html)。在实验结果分析中，我们利用成分句法分析任务上性能最好的模型生成自动标注句法树，以比较用于预训练的自动标注句法树准确性对后续实验的影响，该模型可以在原作者提供的链接中进行下载[LAL-Parser](https://github.com/KhalilMrini/LAL-Parser)
 
-### 预处理
-1.线性化
-  使用先序遍历将树或图结构转化成线性化结构。
-3.BPE/BERT tokenize
-  使用[Subword-nmt](https://github.com/rsennrich/subword-nmt.git)工具对文本进行子词化处理，或使用[BertTokenizer](https://github.com/huggingface/transformers)对文本进行切分
-
-
 ## 模型
 
-本文使用 Open-NMT 作为 Transformer 模型的实现。我们上传了两个版本的模型，一个是基于单任务的Transformer模型——single_task，另一个是基于多任务的Transformer模型——multi_task。相较于单任务的模型，多任务模型的底层结构与单任务一致，即保持传统Transformer的Encoder和Decoder层，但是在参数设置上，我们增加了task_type(['task','task2'])用于区分在训练过程中不同任务的参数更新。两个模型最本质的区别在于训练策略上的不同，多任务模型每训练一步就更换成另一任务训练集进行训练，为此我们在原参数基础上增加了train_steps2、warmup_steps2、learning_rate2、batch_size2作为第二个任务的参数。
+本文使用 Open-NMT 作为 Transformer 模型的实现。我们上传了两个版本的模型，一个是基于单任务的Transformer模型——single_task，另一个是基于多任务的Transformer模型——multi_task。相较于单任务的模型，多任务模型的底层结构与单任务一致，即保持传统Transformer的Encoder和Decoder层，但是在参数设置上，我们增加了task_type(['task','task2'])用于区分在训练过程中不同任务的参数更新。两个模型最本质的区别在于训练策略上的不同，多任务模型每训练一步就更换成另一任务训练集进行训练，为此我们在原参数基础上增加了train_src2、train_tgt2、valid_src2、valid_tgt2、train_steps2、warmup_steps2、learning_rate2、batch_size2作为第二个任务的参数。后期会将单任务和多任务的代码合并成一套代码，且其他代码也会陆续上传。
 
