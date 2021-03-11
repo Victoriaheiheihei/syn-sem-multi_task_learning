@@ -16,6 +16,11 @@ Relation tags (edge labels) are predefined and are not extracted from text (like
 ## About Constituency
 Constituency Syntax Tree is a tree-based syntatic formalism,which contains POS and syntactic constituent for each word in the input sentence.More details are in the page [Constituency](https://catalog.ldc.upenn.edu/LDC99T42)
 
+## Data
+
+Though AMR and Constituency corpus are not public_avalible,the machine tranlation data WMT14 for EN2DE is avalible,we update it with codes.
+
 ## Model
-We provide two models, one is a model based on single task named , and the other is a model based on joint learning.
+
+We provide two models, one is a model based on single task, and the other is a model based on joint learning.The main improvement lies in
 
