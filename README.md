@@ -18,7 +18,7 @@ Constituency Syntax Tree is a tree-based syntatic formalism,which contains POS a
 
 ## Data
 
-Though AMR and Constituency corpus are not public_avalible,the machine tranlation data WMT14 for EN2DE is avalible , you can also find corpus from the official page [WMT14](http://www.statmt.org/wmt14/translation-task.html)
+Though AMR and Constituency corpus are not public_avalible,the machine tranlation data WMT14 for EN2DE is avalible , you can also find corpus from the official page [WMT14](http://www.statmt.org/wmt14/translation-task.html). In the comparative experiment, we used the best performing model so far, you can get the model from [LAL-Parser](https://github.com/KhalilMrini/LAL-Parser)
 
 ## Model
 
