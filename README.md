@@ -1,4 +1,4 @@
-# syn-sem-multi_task_learning
+## syn-sem-multi_task_learning
 
 This repository contains the code for our paper "基于联合学习的成分句法与AMR语义分析方法".
 
