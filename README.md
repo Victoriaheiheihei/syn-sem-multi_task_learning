@@ -1,26 +1,22 @@
 # syn-sem-multi_task_learning
 
-This repository contains the code for our paper "基于联合学习的成分句法与AMR语义分析方法".
+本仓库中包含了文章 "基于联合学习的成分句法与AMR语义分析方法"中涉及的部分代码
 
-The code is developed under Pytorch '1.1.0' Due to the compitibility reason of Pytorch, it may not be loaded by some lower version (such as 0.4.0).
+该代码是在Pytorch'1.1.0'下开发的。由于Pytorch的兼容性原因，某些较低版本（例如0.4.0）可能不会加载该代码。
 
-Please create issues if there are any questions! This can make things more tractable.
+如有任何疑问，请提出问题！
 
-## About AMR
-AMR is a graph-based semantic formalism, which can unified representations for several sentences of the same meaning. Comparing with other structures, such as dependency and semantic roles, the AMR graphs have several key differences:
+## 关于 AMR
+AMR是基于图的语义表示，可以统一表示具有相同含义的多个句子。 与依赖关系和语义角色等其他结构相比，AMR图具有几个主要差异：AMR仅关注概念及其关系，因此不包括功能词；边缘标签充当功能词的角色；将名词，动词或命名实体转换为AMR概念时，将不使用拐点； 有时使用同义词代替原始单词。 这样可以使AMR更加统一，以便每个AMR图可以表示更多的句子。更多细节内容可以访问AMR官方网址 [AMR](https://amr.isi.edu/)
 
-AMRs only focus on concepts and their relations, so no function words are included. Actually the edge labels serve the role of function words.
-Inflections are dropped when converting a noun, a verb or named entity into a AMR concept. Sometimes a synonym is used instead of the original word. This makes more unified AMRs so that each AMR graph can represent more sentences.
-Relation tags (edge labels) are predefined and are not extracted from text (like the way OpenIE does). More details are in the official AMR page [AMR](https://amr.isi.edu/)
-
-## About Constituency
-Constituency Syntax Tree is a tree-based syntatic formalism,which contains POS and syntactic constituent for each word in the input sentence.More details are in the page [Constituency](https://catalog.ldc.upenn.edu/LDC99T42)
+## 关于成分句法分析
+成分句法树是一种基于树的句法表示，它包含输入句子中每个单词的词性以及句法成分。更多详情请见 [Constituency](https://catalog.ldc.upenn.edu/LDC99T42)
 
 ## Data
 
-Though AMR and Constituency corpus are not public_avalible,the machine tranlation data WMT14 for EN2DE is avalible , you can also find corpus from the official page [WMT14](http://www.statmt.org/wmt14/translation-task.html). In the comparative experiment, we used the best performing model so far, you can get the model from [LAL-Parser](https://github.com/KhalilMrini/LAL-Parser)
+因为AMR解析语料和成分句法语料无法公开，因此此处并未上传，但用于预训练的机器翻译WMT14英德语料可以在链接中进行下载[WMT14](http://www.statmt.org/wmt14/translation-task.html)。在实验结果分析中，我们利用成分句法分析任务上性能最好的模型生成自动标注句法树，以比较用于预训练的自动标注句法树准确性对后续实验的影响，该模型可以在原作者提供的链接中进行下载[LAL-Parser](https://github.com/KhalilMrini/LAL-Parser)
 
 ## Model
 
-We provide two models, one is a model based on single task, and the other is a model based on joint learning.The main improvement lies in
+本文使用 Open-NMT 作为 Transformer 模型的实现于We provide two models, one is a model based on single task, and the other is a model based on joint learning.The main improvement lies in
 
