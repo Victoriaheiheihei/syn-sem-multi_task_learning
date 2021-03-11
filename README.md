@@ -14,8 +14,8 @@ Inflections are dropped when converting a noun, a verb or named entity into a AM
 Relation tags (edge labels) are predefined and are not extracted from text (like the way OpenIE does). More details are in the official AMR page [AMR](https://amr.isi.edu/)
 
 ## About Constituency
-Constituency Syntax Tree is a tree-based syntatic formalism,which contains POS and syntactic constituent for each word in the input sentence.More details are in the page[Constituency](https://catalog.ldc.upenn.edu/LDC99T42)
+Constituency Syntax Tree is a tree-based syntatic formalism,which contains POS and syntactic constituent for each word in the input sentence.More details are in the page [Constituency](https://catalog.ldc.upenn.edu/LDC99T42)
 
 ## Model
-
+We provide two models, one is a model based on single task named , and the other is a model based on joint learning.
 
