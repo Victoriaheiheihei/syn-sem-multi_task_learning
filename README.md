@@ -14,7 +14,7 @@ AMR是基于图的语义表示，可以统一表示具有相同含义的多个�
 
 ## 数据
 
-因为AMR解析语料和成分句法语料无法公开，因此此处并未上传，但用于预训练的机器翻译WMT14英德语料可以在链接中进行下载[WMT14](http://www.statmt.org/wmt14/translation-task.html)。在实验结果分析中，我们利用成分句法分析任务上性能最好的模型生成自动标注句法树，以比较用于预训练的自动标注句法树准确性对后续实验的影响，该模型可以在原作者提供的链接中进行下载[LAL-Parser](https://github.com/KhalilMrini/LAL-Parser)
+因为AMR解析语料和成分句法语料无法公开，因此此处并未上传，但用于预训练的机器翻译WMT14英德语料可以在链接中进行下载[WMT14](http://www.statmt.org/wmt14/translation-task.html)。在利用自动标注语料进行预训练的实验中，使用[AllenNLP](https://github.com/allenai/allennlp)工具生成自动标注句法树，使用单任务AMR解析中最好的模型生成自动标注的AMR图。在实验结果分析中，我们利用成分句法分析任务上性能最好的模型生成自动标注句法树，以比较用于预训练的自动标注句法树准确性对后续实验的影响，该模型可以在原作者提供的链接中进行下载[LAL-Parser](https://github.com/KhalilMrini/LAL-Parser)
 
 ## 模型
 
