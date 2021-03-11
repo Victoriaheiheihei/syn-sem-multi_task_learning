@@ -1,0 +1,25 @@
+amrout_bert
+
+# pyc file
+*.pyc
+
+# cache
+.idea
+.vscode
+
+# shell
+*.sh
+
+# vocab
+*.pt
+*_vocab
+
+# data
+data
+*.res
+
+*.swp
+*.swn
+*.swo
+
+*.log
