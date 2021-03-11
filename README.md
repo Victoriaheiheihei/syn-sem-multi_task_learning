@@ -11,4 +11,6 @@ AMR is a graph-based semantic formalism, which can unified representations for s
 
 AMRs only focus on concepts and their relations, so no function words are included. Actually the edge labels serve the role of function words.
 Inflections are dropped when converting a noun, a verb or named entity into a AMR concept. Sometimes a synonym is used instead of the original word. This makes more unified AMRs so that each AMR graph can represent more sentences.
-Relation tags (edge labels) are predefined and are not extracted from text (like the way OpenIE does). More details are in the official AMR page [AMR](https://amr.isi.edu/), where you can download the public-available AMR bank: little prince. Try it for fun!
+Relation tags (edge labels) are predefined and are not extracted from text (like the way OpenIE does). More details are in the official AMR page [AMR](https://amr.isi.edu/)
+
+
