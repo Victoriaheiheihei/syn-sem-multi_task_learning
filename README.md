@@ -20,3 +20,17 @@ AMR是基于图的语义表示，可以统一表示具有相同含义的多个�
 
 本文使用 Open-NMT 作为 Transformer 模型的实现。我们上传了两个版本的模型，一个是基于单任务的Transformer模型——single_task，另一个是基于多任务的Transformer模型——multi_task。相较于单任务的模型，多任务模型的底层结构与单任务一致，即保持传统Transformer的Encoder和Decoder层，但是在参数设置上，我们增加了task_type(['task','task2'])用于区分在训练过程中不同任务的参数更新。两个模型最本质的区别在于训练策略上的不同，多任务模型每训练一步就更换成另一任务训练集进行训练，为此我们在原参数基础上增加了train_src2、train_tgt2、valid_src2、valid_tgt2、train_steps2、warmup_steps2、learning_rate2、batch_size2作为第二个任务的参数。后期会将单任务和多任务的代码合并成一套代码，且其他代码也会陆续上传。
 
+## 使用方法
+
+**代码**
+包含单任务（single-task）以及多任务联合学习（multi-task）代码，需要根据自身需求在对应代码下进行如下操作。
+
+**数据预处理**
+bash preprocess.sh        #文件中的路径需要根据自身项目文件进行更改  
+输入文件包含了['train','valid','test']数据集的源端和目标端文件，需要将原始amr处理成src与tgt分别存放在两个文件中（处理方法不固定，只需处理成模型输入输出的文本格式，如需要使用BPE或其他分词方法，需要使用BPE或分词之后的文件，本代码中不包含BPE和分词的脚本），两个文件中数据顺序需一一对应。  
+
+**模型训练**
+bash train.sh            #文件中的路径需要根据自身项目文件进行更改  
+
+**解码过程**
+bash translate.sh         #文件中的路径需要根据自身项目文件进行更改  
